@@ -85,6 +85,6 @@ class MusicLibraryController
       song = Song.all.sort{ |song1, song2| song1.name <=> song2.name }[number-1]
     end
 
-    puts "Now playing #{song.name} by #{song.artist.name}" if song
+    puts "Playing #{song.name} by #{song.artist.name}" if song
   end
 end
