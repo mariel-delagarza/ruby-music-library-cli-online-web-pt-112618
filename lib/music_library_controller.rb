@@ -1,7 +1,7 @@
 class MusicLibraryController
 
   def initialize(path = "./db/mp3s")
-     MusicImporter.new(path).import
+    MusicImporter.new(path).import
   end
 
   def call
@@ -21,42 +21,40 @@ class MusicLibraryController
       input = gets.strip
 
       case input
-        when "list songs"
-          list_songs
-        when "list artists"
-          list_artists
-        when "list genres"
-          list_genres
-        when "list artist"
-          list_songs_by_artist
-        when "list genre"
-          list_songs_by_genre
-        when "play song"
-          play_song
-        end
+      when "list songs"
+        list_songs
+      when "list artists"
+        list_artists
+      when "list genres"
+        list_genres
+      when "list artist"
+        list_songs_by_artist
+      when "list genre"
+        list_songs_by_genre
+      when "play song"
+        play_song
       end
     end
   end
 
-    def list_songs
-      Song.all.sort{ |song1, song2| song1.name <=> song2.name }.each.with_index(1) do |song, index|
-        puts "#{index}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
-      end
+  def list_songs
+    Song.all.sort{ |song1, song2| song1.name <=> song2.name }.each.with_index(1) do |song, index|
+      puts "#{index}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
     end
+  end
 
-    def list_artists
-    end
+  def list_artists
+  end
 
-    def list_genres
-    end
+  def list_genres
+  end
 
-    def list_songs_by_artist
-    end
+  def list_songs_by_artist
+  end
 
-    def list_songs_by_genre
-    end
+  def list_songs_by_genre
+  end
 
-    def play_song
-    end
-end
-end
+  def play_song
+  end
+end 
